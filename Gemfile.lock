@@ -131,6 +131,18 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (2.1.0)
+    kaminari (1.1.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.1.1)
+      kaminari-activerecord (= 1.1.1)
+      kaminari-core (= 1.1.1)
+    kaminari-actionview (1.1.1)
+      actionview
+      kaminari-core (= 1.1.1)
+    kaminari-activerecord (1.1.1)
+      activerecord
+      kaminari-core (= 1.1.1)
+    kaminari-core (1.1.1)
     launchy (2.4.3)
       addressable (~> 2.3)
     letter_opener (1.6.0)
@@ -303,6 +315,7 @@ DEPENDENCIES
   faker
   haml-rails
   jquery-rails
+  kaminari
   letter_opener
   listen
   pry-rails
@@ -319,4 +332,4 @@ DEPENDENCIES
   uglifier
 
 BUNDLED WITH
-   1.16.1
+   1.16.3
