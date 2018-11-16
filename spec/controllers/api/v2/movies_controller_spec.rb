@@ -11,9 +11,9 @@ describe Api::V2::MoviesController, type: :controller do
           id: movie.id,
           title: movie.title,
           genre: {
-            genre.id,
-            genre.name,
-            genre.movies.count
+            id: genre.id,
+            name: genre.name,
+            movies_count: genre.movies.count
           }
         }
       end
