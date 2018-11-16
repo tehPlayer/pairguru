@@ -5,6 +5,8 @@
     %title= content_for?(:title) ? yield(:title) : 'Pairguru'
     %meta{ name: "description", content: "#{content_for?(:description) ? yield(:description) : 'Props'}" }
     = stylesheet_link_tag 'application', media: 'all'
+    %script{ src: 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js' }
+    %script{ src: 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js' }
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
