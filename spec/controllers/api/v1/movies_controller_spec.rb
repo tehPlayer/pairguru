@@ -2,14 +2,12 @@ require "rails_helper"
 
 describe Api::V1::MoviesController, type: :controller do
   describe "#index" do
-    let(:movie1) { create(:movie) }
-    let(:movie2) { create(:movie) }
+    let(:movies) { create_list(:movie, 5) }
 
     let(:response) do
-      [
-        {id: movie1.id, title: movie1.title},
-        {id: movie2.id, title: movie2.title}
-      ]
+      movies.map do |movie|
+        {id: movie.id, title: movie.title}
+      end
     end
 
     it "returns an array of movies with id and title only" do
