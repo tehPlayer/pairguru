@@ -5,5 +5,6 @@ class GenresController < ApplicationController
 
   def movies
     @genre = Genre.find(params[:id]).decorate
+    @movies = @genre.movies.page(params[:page])
   end
 end
