@@ -1,2 +1,4 @@
-class ApiController < ApplicationController::API
+module Api
+  class ApplicationController < ActionController::API
+  end
 end

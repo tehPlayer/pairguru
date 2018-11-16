@@ -14,4 +14,8 @@
 
 class Movie < ApplicationRecord
   belongs_to :genre
+
+  scope :released, -> {
+    where('released_at <= ?', Time.now.to_formatted_s(:db))
+  }
 end
