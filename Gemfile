@@ -28,6 +28,9 @@ end
 
 group :development, :test do
   gem "capybara"
+  gem "capybara-selenium"
+  # When using capybara, it mocks the AJAX calls
+  gem "puffing-billy"
   gem "factory_bot_rails"
   gem "faker"
   gem "listen"
