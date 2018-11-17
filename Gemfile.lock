@@ -93,6 +93,7 @@ GEM
     choice (0.2.0)
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
+    connection_pool (2.2.2)
     cookiejar (0.3.3)
     crass (1.0.4)
     debug_inspector (0.0.3)
@@ -211,6 +212,8 @@ GEM
       http_parser.rb (~> 0.6.0)
       multi_json
     rack (2.0.4)
+    rack-protection (2.0.4)
+      rack
     rack-test (1.0.0)
       rack (>= 1.0, < 3)
     rails (5.2.0)
@@ -247,6 +250,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    redis (4.0.3)
     request_store (1.4.1)
       rack (>= 1.4)
     responders (2.4.0)
@@ -299,6 +303,10 @@ GEM
     sexp_processor (4.11.0)
     shoulda-matchers (3.1.2)
       activesupport (>= 4.0.0)
+    sidekiq (5.2.3)
+      connection_pool (~> 2.2, >= 2.2.2)
+      rack-protection (>= 1.5.0)
+      redis (>= 3.3.5, < 5)
     simplecov (0.16.1)
       docile (~> 1.1)
       json (>= 1.8, < 3)
@@ -363,6 +371,7 @@ DEPENDENCIES
   rubocop
   sass-rails
   shoulda-matchers
+  sidekiq
   simplecov
   spring
   spring-commands-rspec
