@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe Api::V2::MoviesController, type: :controller do
   describe "#index" do
-    let(:movies) { create_list(:movie, 5) }
+    let!(:movies) { create_list(:movie, 5) }
 
     let(:expected_response) do
       movies.map do |movie|
@@ -21,7 +21,7 @@ describe Api::V2::MoviesController, type: :controller do
 
     it "returns an array of movies with id, title and genre object" do
       get :index
-      expect(response).to eq(expected_response)
+      expect(response_json).to eq(expected_response)
     end
   end
 end

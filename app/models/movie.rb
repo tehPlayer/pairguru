@@ -13,7 +13,7 @@
 #
 
 class Movie < ApplicationRecord
-  belongs_to :genre
+  belongs_to :genre, counter_cache: true
 
   scope :released, -> {
     where('released_at <= ?', Time.now.to_formatted_s(:db))

@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   # API
   namespace :api do
     namespace :v1 do
-      resources :movies, only: [:index, :show]
+      resources :movies, only: [:index]
+    end
+    namespace :v2 do
+      resources :movies, only: [:index]
     end
   end
 

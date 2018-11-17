@@ -12,7 +12,7 @@ describe Api::V1::MoviesController, type: :controller do
 
     it "returns an array of movies with id and title only" do
       get :index
-      expect(JSON.parse(response.body)).to eq(movies_response)
+      expect(response_json).to eq(movies_response)
     end
   end
 end
