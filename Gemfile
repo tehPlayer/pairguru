@@ -11,6 +11,7 @@ gem "sass-rails"
 gem "sqlite3"
 gem "uglifier"
 gem "kaminari"
+gem "active_model_serializers", "~> 0.10.0"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.1.0", require: false
