@@ -17,4 +17,9 @@ class Movie {
     this.node.querySelector('.movie-cover').setAttribute('src', newPost);
     return true;
   }
+
+  setRating(newRating) {
+    this.node.querySelector('.movie-rating').textContent = newRating;
+    return true;
+  }
 }

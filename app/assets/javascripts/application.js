@@ -11,4 +11,5 @@
 // about supported directives.
 //
 //= require ./axiosDefaults
-//= require ./movies/movies
+//= require ./movies/moviesList
+//= require ./movies/movieShow
