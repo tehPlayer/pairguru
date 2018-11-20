@@ -1,7 +1,9 @@
 //= require ./movie
+//= require ./moviesBase
 
-class MoviesList {
+class MoviesList extends MoviesBase {
   constructor(node) {
+    super();
     this.moviesData = {};
     this.movieNodes = _.map(
       node.querySelectorAll('.movie'),
@@ -10,38 +12,22 @@ class MoviesList {
   }
 
   getMoviesInfo() {
-    this._findTitles();
-    this._pullAndUpdateData();
+    this.findTitles();
+    this.updateMoviesData();
   };
 
-  _findTitles() {
+  findTitles() {
     let movieTitles = this.movieNodes.map(movie => {return movie.title});
     this.movieTitles = _.uniq(movieTitles);
   };
 
-  _pullAndUpdateData() {
-    this.movieTitles.map((title) => {
-      axios.get("api/v1/movies/" + title)
-        .then((response) => {
-          let attributes = response.data['data']['attributes'];
-          let movieData = {
-            ...attributes,
-            poster: axios.defaults.apiURL + attributes['poster']
-          };
-          this._updateTable(title, movieData);
-        })
-        .catch((error) => {
-          let errorData = {
-            plot: 'Error fetching: ' + title
-          };
-          this._updateTable(title, errorData);
-        });
-    });
+  updateMoviesData() {
+    this.movieTitles.map((title) => { this.executeUpdate(title); });
   };
 
-  _updateTable(title, movieData) {
+  updateView(movieData) {
     this.movieNodes.forEach((node) => {
-      if (node.title !== title) { return }
+      if (node.title !== movieData.title) { return }
       let attributes = movieData;
       node.setPlot(attributes['plot']);
       node.setPoster(attributes['poster']);
