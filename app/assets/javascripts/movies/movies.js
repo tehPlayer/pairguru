@@ -26,7 +26,7 @@ class Movies {
         .then((response) => {
           let attributes = response.data['data']['attributes'];
           let movieData = {
-            plot: attributes['plot'],
+            ...attributes,
             poster: axios.defaults.apiURL + attributes['poster']
           };
           this._updateTable(title, movieData);
@@ -46,6 +46,7 @@ class Movies {
       let attributes = movieData;
       node.setPlot(attributes['plot']);
       node.setPoster(attributes['poster']);
+      node.setRating(attributes['rating']);
     });
   }
 };
