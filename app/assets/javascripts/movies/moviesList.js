@@ -1,8 +1,7 @@
 //= require ./movie
 
-class Movies {
+class MoviesList {
   constructor(node) {
-    this.base = node;
     this.moviesData = {};
     this.movieNodes = _.map(
       node.querySelectorAll('.movie'),
@@ -54,7 +53,7 @@ class Movies {
 document.addEventListener("DOMContentLoaded", function(event) { 
   let moviesSelector = document.querySelector('#movies');
   if (moviesSelector) {
-    let movies = new Movies(moviesSelector);
+    let movies = new MoviesList(moviesSelector);
     movies.getMoviesInfo();
   };
 });
