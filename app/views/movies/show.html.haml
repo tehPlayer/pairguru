@@ -14,6 +14,7 @@
         %br
         - unless @user_commented
           = render 'comments/form', movie: @movie, comment: @comment
+        %br
       = render partial: 'comments/comment', collection: @comments
     .col-sm-3
       %img.img-rounded.img-thumbnail.movie-cover
