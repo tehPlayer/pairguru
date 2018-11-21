@@ -7,6 +7,9 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
+    @comments = @movie.comments.includes(:user)
+    @comment = @movie.comments.new
+    @user_commented = signed_in? && UserCommentedWarden.new(current_user, @movie).check
   end
 
   def send_info
