@@ -1,0 +1,5 @@
+%h4 Comment
+= form_with model: [@movie, @comment] do |form|
+  .form-group
+    = form.text_area :content, class: 'form-control w-100', rows: '5'
+  = form.submit 'Submit', class: 'btn btn-primary'
