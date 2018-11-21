@@ -1,0 +1,9 @@
+.well
+  %p
+    • by 
+    = comment.user_name
+    • posted at - 
+    = comment.created_at.strftime('%H:%M %d.%m.%Y')
+  %hr
+  %p
+    = comment.content

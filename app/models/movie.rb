@@ -15,6 +15,8 @@
 class Movie < ApplicationRecord
   belongs_to :genre, counter_cache: true
 
+  has_many :comments
+
   validates_with TitleBracketsValidator
 
   scope :released, -> {

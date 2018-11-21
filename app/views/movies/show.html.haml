@@ -9,8 +9,11 @@
     .col-sm-9
       .jumbotron.movie-description
         Loading movie data...
+      - if user_signed_in?
+        %p= link_to 'Email me details about this movie', send_info_movie_path(@movie), class: 'btn btn-sm btn-default'
+        %br
+        - unless @user_commented
+          = render 'comments/form', movie: @movie, comment: @comment
+      = render partial: 'comments/comment', collection: @comments
     .col-sm-3
       %img.img-rounded.img-thumbnail.movie-cover
-
-  - if user_signed_in?
-    %p= link_to 'Email me details about this movie', send_info_movie_path(@movie), class: 'btn btn-sm btn-default'
