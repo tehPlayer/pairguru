@@ -1,2 +1,9 @@
-%h1 TopCommentators#index
-%p Find me in app/views/top_commentators/index.html.haml
+%h1 Top commentators of the last 7 days
+%table#top-commentators.table.table-stripped
+  %thead
+    %tr
+      %th #
+      %th Name
+      %th Comments count
+  %tbody
+    = render partial: 'top_commentator', collection: @top_commentators
